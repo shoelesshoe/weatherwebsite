@@ -1,12 +1,11 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 from datetime import datetime
 import requests
 
 app = Flask(__name__)
 
-
-@app.route('/')
+@app.route("/", methods=["GET", "POST"])
 def home():
     year = datetime.now().year
 
@@ -25,7 +24,6 @@ def home():
     seconds = datetime.now().second
     seconds = str(seconds).zfill(2)
 
-
     response = requests.get(f"https://api.data.gov.sg/v1/environment/24-hour-weather-forecast?date={year}-{month}-{date}").json()
 
     # kwargs = {
@@ -33,8 +31,3 @@ def home():
     # }
     
     return render_template("home.html")
-
-
-
-
-# TODO: add alerts (pop-up) when some area is raining
