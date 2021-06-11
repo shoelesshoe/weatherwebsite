@@ -24,7 +24,12 @@ def home():
     seconds = datetime.now().second
     seconds = str(seconds).zfill(2)
 
-    response = requests.get(f"https://api.data.gov.sg/v1/environment/24-hour-weather-forecast?date={year}-{month}-{date}").json()
+    next_2_hour_forecast = requests.get(f"https://api.data.gov.sg/v1/environment/2-hour-weather-forecast?date_time={year}-{month}-{date}T{hours}-{minutes}-{seconds}").json()
+    # this provides info for each location in sg (forecast only)
+    today_forecast = requests.get(f"https://api.data.gov.sg/v1/environment/24-hour-weather-forecast?date_time={year}-{month}-{date}T{hours}-{minutes}-{seconds}").json()
+    # this provides info for the whole day of sg (forecast, humidity, temp, wind direction and speed) and forecasts for each region of sg every 6h starting from 00:00
+    next_4_days_forecast = requests.get(f"https://api.data.gov.sg/v1/environment/4-day-weather-forecast?date_time={year}-{month}-{date}T{hours}-{minutes}-{seconds}").json()
+    # this provides info for the NEXT 4 days for the whole day of sg (forecast, humidity, temp, wind direction and speed)
 
     # kwargs = {
         # "forecast": response["items"]["general"]["forecast"]
