@@ -130,7 +130,3 @@ dmypy.json
 
 # vscode
 .vscode/
-
-# heroku
-runtime.txt
-Procfile
