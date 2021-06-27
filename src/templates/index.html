@@ -17,12 +17,6 @@
     </header>
     <main>
         <section>
-            <form name="search" action="../app.py" method="get">
-                <input type="text" name="searchbox">
-                <button>Search</button>
-            </form>
-        </section>
-        <section>
             <article class="today-forecast">
                 <div class="forecast-header">
                     <div class="day">{{ today_day }}</div>
@@ -34,12 +28,12 @@
                         <div class="high-temp">{{ today_high_temp }}<sup>o</sup>C</div>
                         <div class="low-temp">{{ today_low_temp }}<sup>o</sup>C</div>
                         <div class="forecast-icon">
-                            <img src="" alt="" width=90>
+                            <img src="{{ today_forecast_img }}" alt="Forecast" width=90>
                         </div>	
                     </div>
-                    <span><img src="" alt="">{{ humidity }}%</span>
-                    <span><img src="" alt="">{{ wind_speed }}km/h</span>
-                    <span><img src="" alt="">{{ wind_direction }}</span>
+                    <span><img src="../static/img/humidity.png" alt="Humidity">{{ humidity }}%</span>
+                    <span><img src="../static/img/windspeed.png" alt="Wind Speed">{{ wind_speed }}km/h</span>
+                    <span><img src="../static/img/direction.jpg" alt="Wind Direction">{{ wind_direction }}</span>
                 </div>
             </div>
             <div class="forecast">
@@ -48,7 +42,7 @@
                 </div>
                 <div class="forecast-content">
                     <div class="forecast-icon">
-                        <img src="" alt="" width=48>
+                        <img src="" alt="Forecast" width=48>
                     </div>
                     <div class="temp">
                         {{ day2_high_temp }}<sup>o</sup>C
@@ -62,7 +56,7 @@
                 </div>
                 <div class="forecast-content">
                     <div class="forecast-icon">
-                        <img src="" alt="" width=48>
+                        <img src="" alt="Forecast" width=48>
                     </div>
                     <div class="temp">
                         {{ day3_high_temp }}<sup>o</sup>C
@@ -76,7 +70,7 @@
                 </div>
                 <div class="forecast-content">
                     <div class="forecast-icon">
-                        <img src="" alt="" width=48>
+                        <img src="" alt="Forecast" width=48>
                     </div>
                     <div class="temp">
                         {{ day4_high_temp }}<sup>o</sup>C
@@ -90,7 +84,7 @@
                 </div>
                 <div class="forecast-content">
                     <div class="forecast-icon">
-                        <img src="" alt="" width=48>
+                        <img src="" alt="Forecast" width=48>
                     </div>
                     <div class="temp">
                         {{ day5_high_temp }}<sup>o</sup>C
@@ -101,7 +95,12 @@
         </section>
     </main>
     <footer>
-        <!-- github and credits??-->
+        <div class="footer-content">
+            <a href="https://data.gov.sg/dataset/weather-forecast">API Used</a>
+        </div>
+        <div class="footer-content">
+            <img src="../static/img/github.jpg" alt="Github"><a href="https://github.com/shoelesshoe/weatherapp">Github</a>
+        </div>
     </footer>
 </body>
 </html>
