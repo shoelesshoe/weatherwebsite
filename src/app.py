@@ -2,21 +2,21 @@ from flask import Flask, render_template, request
 
 from datetime import datetime, timedelta
 import requests
+import os
+
+FORECAST_FOLDER = os.path.join('static', 'forecast_img')
 
 app = Flask(__name__)
+app.config['UPLOAD_FOLDER'] = FORECAST_FOLDER
 
 @app.route("/", methods=["GET"])
 def home():
     ## obtain data
-    next_2_hours_forecast = requests.get("https://api.data.gov.sg/v1/environment/2-hour-weather-forecast").json()
-    # this provides info for each location in sg (forecast only)
     today_forecast = requests.get("https://api.data.gov.sg/v1/environment/24-hour-weather-forecast").json()
-    # this provides info for the whole day of sg (forecast, humidity, temp, wind direction and speed) and forecasts for each region of sg every 6h starting from 00:00
     next_4_days_forecast = requests.get("https://api.data.gov.sg/v1/environment/4-day-weather-forecast").json()
-    # this provides info for the NEXT 4 days for the whole day of sg (forecast, humidity, temp, wind direction and speed)
 
     ## today_day
-    today_day_name = datetime.now().strftime("%A")  # today's day name
+    today_day_name = datetime.now().strftime("%A")  # today's day full name
 
     ## today_month_date
     month = datetime.now().month
@@ -30,7 +30,11 @@ def home():
     ## future days
     future_days = []
     for i in range(1, 5):
-        future_days.append((datetime.today() + timedelta(i)).strftime("%A"))
+        future_days.append((datetime.today() + timedelta(i)).strftime("%A"))  # future days' name in short form
+
+    ## forecast img
+    if today_forecast['items'][0]['general']['forecast'] == "Thundery Showers":
+        today_forecast_path = os.path.join(app.config['UPLOAD_FOLDER'], 'thundery_showers.jpg')
 
     kwargs = {
         "today_day": today_day,
@@ -55,7 +59,9 @@ def home():
         
         "day5": future_days[3],
         "day5_high_temp": next_4_days_forecast['items'][0]['forecasts'][3]['temperature']['high'],
-        "day5_low_temp": next_4_days_forecast['items'][0]['forecasts'][3]['temperature']['low']
+        "day5_low_temp": next_4_days_forecast['items'][0]['forecasts'][3]['temperature']['low'],
+
+        "today_forecast_img": today_forecast_path,
     }
     
     return render_template("home.html", **kwargs)
