@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 import requests
 import os
 
-FORECAST_FOLDER = os.path.join('static', 'forecast_img')
+FORECAST_FOLDER = os.path.join('static', 'img', 'forecast_img')
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = FORECAST_FOLDER
@@ -34,11 +34,17 @@ def home():
 
     ## forecast img
     if today_forecast['items'][0]['general']['forecast'] == "Thundery Showers":
-        today_forecast_path = os.path.join(app.config['UPLOAD_FOLDER'], 'thundery_showers.jpg')
+        today_forecast_path = os.path.join(app.config['UPLOAD_FOLDER'], 'thunderstorm.png')
+    elif today_forecast['items'][0]['general']['forecast'] == "Partly Cloudy":
+        today_forecast_path = os.path.join(app.config['UPLOAD_FOLDER'], 'partlycloudy.png')
+    elif today_forecast['items'][0]['general']['forecast'] == "Sunny":  #! check if its "Sunny"
+        today_forecast_path = os.path.join(app.config['UPLOAD_FOLDER'], 'sunny.png')
+    #TODO: check if theres more other forecasts
 
     kwargs = {
         "today_day": today_day,
         "today_month_date": today_month_date,
+        "today_forecast_img": today_forecast_path,
         "today_high_temp": today_forecast['items'][0]['general']['temperature']['high'],
         "today_low_temp": today_forecast['items'][0]['general']['temperature']['low'],
         "humidity": f"{today_forecast['items'][0]['general']['relative_humidity']['low']}-{today_forecast['items'][0]['general']['relative_humidity']['high']}",
@@ -60,8 +66,6 @@ def home():
         "day5": future_days[3],
         "day5_high_temp": next_4_days_forecast['items'][0]['forecasts'][3]['temperature']['high'],
         "day5_low_temp": next_4_days_forecast['items'][0]['forecasts'][3]['temperature']['low'],
-
-        "today_forecast_img": today_forecast_path,
     }
     
-    return render_template("home.html", **kwargs)
+    return render_template("index.html", **kwargs)
