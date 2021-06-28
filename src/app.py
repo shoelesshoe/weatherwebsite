@@ -9,7 +9,7 @@ FORECAST_FOLDER = os.path.join('static', 'img', 'forecast_img')
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = FORECAST_FOLDER
 
-@app.route("/", methods=["GET"])
+@app.route("/")
 def home():
     ## obtain data
     today_forecast = requests.get("https://api.data.gov.sg/v1/environment/24-hour-weather-forecast").json()
