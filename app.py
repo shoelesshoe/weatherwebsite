@@ -55,7 +55,7 @@ def create_app():
             "today_high_temp": today_forecast['items'][0]['general']['temperature']['high'],
             "today_low_temp": today_forecast['items'][0]['general']['temperature']['low'],
             "humidity": f"{today_forecast['items'][0]['general']['relative_humidity']['low']}-{today_forecast['items'][0]['general']['relative_humidity']['high']}",
-            "wind_speed": f"{today_forecast['items'][0]['general']['wind']['speed']['low']}-{today_forecast['items'][0]['general']['wind']['speed']['low']}",
+            "wind_speed": f"{today_forecast['items'][0]['general']['wind']['speed']['low']}-{today_forecast['items'][0]['general']['wind']['speed']['high']}",
             "wind_direction": today_forecast['items'][0]['general']['wind']['direction'],
 
             "day2": future_days[0],
