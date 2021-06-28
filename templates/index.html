@@ -16,83 +16,81 @@
         </nav>
     </header>
     <main>
-        <section>
-            <article class="today-forecast">
-                <div class="forecast-header">
-                    <div class="day">{{ today_day }}</div>
-                    <div class="date">{{ today_month_date }}</div>
-                </div>
-                <div class="forecast-content">
-                    <div class="location">Singapore</div>
-                    <div class="temp">
-                        <div class="high-temp">{{ today_high_temp }}<sup>o</sup>C</div>
-                        <div class="low-temp">{{ today_low_temp }}<sup>o</sup>C</div>
-                        <div class="forecast-icon">
-                            <img src="{{ today_forecast_img }}" alt="Forecast" width=90>
-                        </div>	
-                    </div>
-                    <span><img src="../static/img/humidity.png" alt="Humidity">{{ humidity }}%</span>
-                    <span><img src="../static/img/windspeed.png" alt="Wind Speed">{{ wind_speed }}km/h</span>
-                    <span><img src="../static/img/winddirection.png" alt="Wind Direction">{{ wind_direction }}</span>
-                </div>
+        <article class="today-forecast">
+            <div class="forecast-header">
+                <div class="day">{{ today_day }}</div>
+                <div class="date">{{ today_month_date }}</div>
             </div>
-            <div class="forecast">
-                <div class="forecast-header">
-                    <div class="day">{{ day2 }}</div>
-                </div>
-                <div class="forecast-content">
+            <div class="forecast-content">
+                <div class="location">Singapore</div>
+                <div class="temp">
+                    <div class="high-temp">{{ today_high_temp }}<sup>o</sup>C</div>
+                    <div class="low-temp">{{ today_low_temp }}<sup>o</sup>C</div>
                     <div class="forecast-icon">
-                        <img src="" alt="Forecast" width=48>
-                    </div>
-                    <div class="temp">
-                        {{ day2_high_temp }}<sup>o</sup>C
-                    </div>
-                    <small>{{ day2_low_temp }}<sup>o</sup></small>
+                        <img src="{{ today_forecast_img }}" alt="Forecast" width=90>
+                    </div>	
                 </div>
+                <span><img src="../static/img/humidity.png" alt="Humidity">{{ humidity }}%</span>
+                <span><img src="../static/img/windspeed.png" alt="Wind Speed">{{ wind_speed }}km/h</span>
+                <span><img src="../static/img/winddirection.png" alt="Wind Direction">{{ wind_direction }}</span>
             </div>
-            <div class="forecast">
-                <div class="forecast-header">
-                    <div class="day">{{ day3 }}</div>
-                </div>
-                <div class="forecast-content">
-                    <div class="forecast-icon">
-                        <img src="" alt="Forecast" width=48>
-                    </div>
-                    <div class="temp">
-                        {{ day3_high_temp }}<sup>o</sup>C
-                    </div>
-                    <small>{{ day3_low_temp }}<sup>o</sup></small>
-                </div>
+        </article>
+        <article class="forecast">
+            <div class="forecast-header">
+                <div class="day">{{ day2 }}</div>
             </div>
-            <div class="forecast">
-                <div class="forecast-header">
-                    <div class="day">{{ day4 }}</div>
+            <div class="forecast-content">
+                <div class="forecast-icon">
+                    <img src="{{  }}" alt="Forecast" width=48>
                 </div>
-                <div class="forecast-content">
-                    <div class="forecast-icon">
-                        <img src="" alt="Forecast" width=48>
-                    </div>
-                    <div class="temp">
-                        {{ day4_high_temp }}<sup>o</sup>C
-                    </div>
-                    <small>{{ day4_low_temp }}<sup>o</sup></small>
+                <div class="temp">
+                    {{ day2_high_temp }}<sup>o</sup>C
                 </div>
+                <small>{{ day2_low_temp }}<sup>o</sup></small>
             </div>
-            <div class="forecast">
-                <div class="forecast-header">
-                    <div class="day">{{ day5 }}</div>
-                </div>
-                <div class="forecast-content">
-                    <div class="forecast-icon">
-                        <img src="" alt="Forecast" width=48>
-                    </div>
-                    <div class="temp">
-                        {{ day5_high_temp }}<sup>o</sup>C
-                    </div>
-                    <small>{{ day5_low_temp }}<sup>o</sup></small>
-                </div>
+        </article>
+        <article class="forecast">
+            <div class="forecast-header">
+                <div class="day">{{ day3 }}</div>
             </div>
-        </section>
+            <div class="forecast-content">
+                <div class="forecast-icon">
+                    <img src="{{  }}" alt="Forecast" width=48>
+                </div>
+                <div class="temp">
+                    {{ day3_high_temp }}<sup>o</sup>C
+                </div>
+                <small>{{ day3_low_temp }}<sup>o</sup></small>
+            </div>
+        </article>
+        <article class="forecast">
+            <div class="forecast-header">
+                <div class="day">{{ day4 }}</div>
+            </div>
+            <div class="forecast-content">
+                <div class="forecast-icon">
+                    <img src="{{  }}" alt="Forecast" width=48>
+                </div>
+                <div class="temp">
+                    {{ day4_high_temp }}<sup>o</sup>C
+                </div>
+                <small>{{ day4_low_temp }}<sup>o</sup></small>
+            </div>
+        </article>
+        <article class="forecast">
+            <div class="forecast-header">
+                <div class="day">{{ day5 }}</div>
+            </div>
+            <div class="forecast-content">
+                <div class="forecast-icon">
+                    <img src="" alt="Forecast" width=48>
+                </div>
+                <div class="temp">
+                    {{ day5_high_temp }}<sup>o</sup>C
+                </div>
+                <small>{{ day5_low_temp }}<sup>o</sup></small>
+            </div>
+        </article>
     </main>
     <footer>
         <div class="footer-content">
