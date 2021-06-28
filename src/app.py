@@ -10,7 +10,7 @@ FORECAST_FOLDER = os.path.join('static', 'img', 'forecast_img')
 app.config['UPLOAD_FOLDER'] = FORECAST_FOLDER
 
 @app.route("/")
-def home():
+def index():
     ## obtain data
     today_forecast = requests.get("https://api.data.gov.sg/v1/environment/24-hour-weather-forecast").json()
     next_4_days_forecast = requests.get("https://api.data.gov.sg/v1/environment/4-day-weather-forecast").json()
@@ -69,3 +69,6 @@ def home():
     }
     
     return render_template("index.html", **kwargs)
+
+if __name__='__main__':
+    app.run(threaded=True)
