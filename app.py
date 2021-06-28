@@ -33,19 +33,25 @@ def create_app():
         for i in range(1, 5):
             future_days.append((datetime.today() + timedelta(i)).strftime("%A"))  # future days' name in short form
 
-        ## forecast img
-        if today_forecast['items'][0]['general']['forecast'] == "Thundery Showers":
-            today_forecast_path = os.path.join(app.config['UPLOAD_FOLDER'], 'thunderstorm.png')
-        elif today_forecast['items'][0]['general']['forecast'] == "Partly Cloudy":
-            today_forecast_path = os.path.join(app.config['UPLOAD_FOLDER'], 'partlycloudy.png')
-        elif today_forecast['items'][0]['general']['forecast'] == "Sunny":  #! check if its "Sunny"
-            today_forecast_path = os.path.join(app.config['UPLOAD_FOLDER'], 'sunny.png')
-        #TODO: check if theres more other forecasts
+        ## today_forecast_img & dayx_forecast_img
+        def get_forecast_img(path):
+            if "thundery showers" in path.lower():
+                return os.path.join(app.config['UPLOAD_FOLDER'], 'thunderstorm.png')
+            elif "showers" in path.lower():
+                return os.path.join(app.config['UPLOAD_FOLDER'], 'showers.png')
+            elif "partly cloudy" in path.lower():
+                return os.path.join(app.config['UPLOAD_FOLDER'], 'partlycloudy.png')
+            elif "cloudy" in path.lower():
+                return os.path.join(app.config['UPLOAD_FOLDER'], 'cloudy.png')
+            elif "sunny" in path.lower():
+                return os.path.join(app.config['UPLOAD_FOLDER'], 'sunny.png')
+            else:
+                return os.path.join(app.config['UPLOAD_FOLDER'], 'questionmark.png')
 
         kwargs = {
             "today_day": today_day,
             "today_month_date": today_month_date,
-            "today_forecast_img": today_forecast_path,
+            "today_forecast_img": get_forecast_img(today_forecast['items'][0]['general']['forecast']),
             "today_high_temp": today_forecast['items'][0]['general']['temperature']['high'],
             "today_low_temp": today_forecast['items'][0]['general']['temperature']['low'],
             "humidity": f"{today_forecast['items'][0]['general']['relative_humidity']['low']}-{today_forecast['items'][0]['general']['relative_humidity']['high']}",
@@ -55,18 +61,22 @@ def create_app():
             "day2": future_days[0],
             "day2_high_temp": next_4_days_forecast['items'][0]['forecasts'][0]['temperature']['high'],
             "day2_low_temp": next_4_days_forecast['items'][0]['forecasts'][0]['temperature']['low'],
+            "day2_forecast_img": get_forecast_img(next_4_days_forecast['items'][0]['forecasts'][0]['forecast']),
             
             "day3": future_days[1],
             "day3_high_temp": next_4_days_forecast['items'][0]['forecasts'][1]['temperature']['high'],
             "day3_low_temp": next_4_days_forecast['items'][0]['forecasts'][1]['temperature']['low'],
+            "day3_forecast_img": get_forecast_img(next_4_days_forecast['items'][0]['forecasts'][1]['forecast']),
             
             "day4": future_days[2],
             "day4_high_temp": next_4_days_forecast['items'][0]['forecasts'][2]['temperature']['high'],
             "day4_low_temp": next_4_days_forecast['items'][0]['forecasts'][2]['temperature']['low'],
+            "day4_forecast_img": get_forecast_img(next_4_days_forecast['items'][0]['forecasts'][2]['forecast']),
             
             "day5": future_days[3],
             "day5_high_temp": next_4_days_forecast['items'][0]['forecasts'][3]['temperature']['high'],
             "day5_low_temp": next_4_days_forecast['items'][0]['forecasts'][3]['temperature']['low'],
+            "day5_forecast_img": get_forecast_img(next_4_days_forecast['items'][0]['forecasts'][3]['forecast']),
         }
         
         return render_template("index.html", **kwargs)
