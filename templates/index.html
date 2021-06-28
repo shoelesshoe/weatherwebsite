@@ -27,12 +27,12 @@
                     <div class="high-temp">{{ today_high_temp }}<sup>o</sup>C</div>
                     <div class="low-temp">{{ today_low_temp }}<sup>o</sup>C</div>
                     <div class="forecast-icon">
-                        <img src="{{ today_forecast_img }}" alt="Forecast">
+                        <span><img src="{{ today_forecast_img }}" alt="Forecast"></span>
                     </div>	
                 </div>
-                <span><img src="../static/img/humidity.png" alt="Humidity">{{ humidity }}%</span>
-                <span><img src="../static/img/windspeed.jpg" alt="Wind Speed">{{ wind_speed }}km/h</span>
-                <span><img src="../static/img/winddirection.png" alt="Wind Direction">{{ wind_direction }}</span>
+                <img src="../static/img/humidity.png" alt="Humidity">{{ humidity }}%
+                <img src="../static/img/windspeed.jpg" alt="Wind Speed">{{ wind_speed }}km/h
+                <img src="../static/img/winddirection.png" alt="Wind Direction">{{ wind_direction }}
             </div>
         </article>
         <article class="forecast">
