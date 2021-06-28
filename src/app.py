@@ -1,12 +1,12 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template
 
 from datetime import datetime, timedelta
 import requests
 import os
 
-FORECAST_FOLDER = os.path.join('static', 'img', 'forecast_img')
-
 app = Flask(__name__)
+
+FORECAST_FOLDER = os.path.join('static', 'img', 'forecast_img')
 app.config['UPLOAD_FOLDER'] = FORECAST_FOLDER
 
 @app.route("/")
