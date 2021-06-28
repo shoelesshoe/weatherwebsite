@@ -1,1 +1,2 @@
-## Website is here: https://computing-o-weatherapp.herokuapp.com/
+<h1>Computing O WA3 Project</h1>
+<h2>Website link: https://computing-o-weather-website.herokuapp.com/</h2>
