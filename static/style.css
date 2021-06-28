@@ -19,4 +19,18 @@ main {
 
 footer {
     background-color: #363b4e;
+    padding-bottom: 1rem;
+}
+
+.footer-content {
+    width: 45%;
+    height: 50%;
+    background-color: #363b4e;
+    display: inline-block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer-content a {
+    color: #fff;
 }
