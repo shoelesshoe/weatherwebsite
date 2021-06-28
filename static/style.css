@@ -5,7 +5,7 @@ body {
 .navbar {
     background-color: darkslategray;
     padding: 10px;
-    text-align: left;
+    text-align: center;
     font-size: large;
     font-family: Verdana, Tahoma, sans-serif;
 }
@@ -30,14 +30,14 @@ main {
 }
 
 footer {
-    background-color: #363b4e;
+    background-color: darkslategrey;
     padding-bottom: 1rem;
 }
 
 .footer-content {
     width: 45%;
     height: 50%;
-    background-color: #363b4e;
+    background-color: darkslategrey;
     display: inline-block;
     margin: 0 auto;
     text-align: center;
@@ -45,4 +45,5 @@ footer {
 
 .footer-content a {
     color: #fff;
+    font-size: larger;
 }
