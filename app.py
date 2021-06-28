@@ -49,7 +49,7 @@ def create_app():
                 return os.path.join(app.config['UPLOAD_FOLDER'], 'questionmark.png')
 
         kwargs = {
-            "today_day": today_day,
+            "today_day": today_day_name,
             "today_month_date": today_month_date,
             "today_forecast_img": get_forecast_img(today_forecast['items'][0]['general']['forecast']),
             "today_high_temp": today_forecast['items'][0]['general']['temperature']['high'],
