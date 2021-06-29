@@ -3,7 +3,7 @@ body {
 }
 
 .navbar {
-    background-color: #327da8;
+    background-color: #2c6c91;
     padding: 5px
     text-align: center;
     font-size: large;
@@ -19,7 +19,7 @@ body {
 
 .forecast {
     width: 90%;
-    background: #327da8;
+    background: #2c6c91;
     display: table;
     table-layout: fixed;
     width: 90%;
@@ -33,7 +33,7 @@ body {
       display: table-cell;
       vertical-align: top; }
       .forecast .forecast:nth-child(even) {
-        background-color: #4596c4; }
+        background-color: #2f749c; }
       @media screen and (max-width: 990px) {
         .forecast .forecast {
           display: block;
@@ -115,14 +115,14 @@ body {
 }
 
 footer {
-    background-color: #327da8;
+    background-color: #2c6c91;
     padding-bottom: 1rem;
 }
 
 .footer-content {
     width: 45%;
     height: 50%;
-    background-color: #327da8;
+    background-color: #2c6c91;
     display: inline-block;
     margin: 0 auto;
     text-align: center;
