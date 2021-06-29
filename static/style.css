@@ -10,12 +10,93 @@ body {
     font-family: Verdana, Tahoma, sans-serif;
 }
 
-main {
+body {
     background-image: url('./img/skyline.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
 }
+
+.forecast {
+    width: 90%;
+    background: #608183;
+    display: table;
+    table-layout: fixed;
+    width: 90%;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-top: 150px;
+    margin-bottom: 50px;
+    margin-left: 50px;
+    margin-right: 50px; }
+    .forecast .forecast {
+      display: table-cell;
+      vertical-align: top; }
+      .forecast .forecast:nth-child(even) {
+        background-color: #4b6466; }
+      @media screen and (max-width: 990px) {
+        .forecast .forecast {
+          display: block;
+          width: 16.6667%;
+          float: left; } }
+      .forecast .forecast.today {
+        width: 420px; }
+        .forecast .forecast.today .forecast-header {
+          *zoom: 1; }
+          .forecast .forecast.today .forecast-header:after {
+            content: " ";
+            clear: both;
+            display: block;
+            overflow: hidden;
+            height: 0; }
+          .forecast .forecast.today .forecast-header .day {
+            float: left; }
+          .forecast .forecast.today .forecast-header .date {
+            float: right; }
+        .forecast .forecast.today .forecast-content {
+          text-align: left;
+          padding-top: 30px;
+          padding-bottom: 30px; }
+        .forecast .forecast.today .location {
+          font-size: 18px;
+          font-size: 1.2857142857em;
+          font-weight: 400; }
+        .forecast .forecast.today .degree .num, .forecast .forecast.today .degree .forecast-icon {
+          display: inline-block;
+          vertical-align: middle; }
+        .forecast .forecast.today .degree .num {
+          font-size: 90px;
+          font-size: 6.4285714286rem;
+          margin-right: 30px; }
+        .forecast .forecast.today span {
+          margin-right: 20px; }
+          .forecast .forecast.today span img {
+            margin-right: 5px;
+            vertical-align: middle; }
+        @media screen and (max-width: 990px) {
+          .forecast .forecast.today {
+            display: block;
+            width: 100%; } }
+      .forecast .forecast .forecast-header {
+        background: rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        text-align: center;
+        font-weight: 400; }
+      .forecast .forecast .forecast-icon {
+        height: 50px; }
+      .forecast .forecast .forecast-content {
+        padding: 50px 20px 10px;
+        text-align: center; }
+        .forecast .forecast .forecast-content .forecast-icon {
+          margin-bottom: 20px; }
+        .forecast .forecast .forecast-content .degree {
+          font-size: 24px;
+          font-size: 1.7142857143em;
+          color: white;
+          font-weight: 700; }
+        .forecast .forecast .forecast-content small {
+          font-size: 16px;
+          font-size: 1.1428571429em; }
 
 .forecast-icon img {
     width: 48px;
