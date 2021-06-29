@@ -29,13 +29,13 @@ body {
     margin-bottom: 50px;
     margin-left: 50px;
     margin-right: 50px; }
-    .forecast {
+    .forecast .forecast {
       display: table-cell;
       vertical-align: top; }
       .forecast .forecast:nth-child(even) {
         background-color: #2f749c; }
       @media screen and (max-width: 990px) {
-        .forecast {
+        .forecast .forecast {
           display: block;
           width: 16.6667%;
           float: left; } }
@@ -77,24 +77,24 @@ body {
           .forecast .forecast.today {
             display: block;
             width: 100%; } }
-      .forecast .forecast-header {
+      .forecast .forecast .forecast-header {
         background: rgba(0, 0, 0, 0.1);
         padding: 10px;
         text-align: center;
         font-weight: 400; }
-      .forecast .forecast-icon {
+      .forecast .forecast .forecast-icon {
         height: 50px; }
-      .forecast .forecast-content {
+      .forecast .forecast .forecast-content {
         padding: 50px 20px 10px;
         text-align: center; }
-        .forecast .forecast-content .forecast-icon {
+        .forecast .forecast .forecast-content .forecast-icon {
           margin-bottom: 20px; }
-        .forecast .forecast-content .degree {
+        .forecast .forecast .forecast-content .degree {
           font-size: 24px;
           font-size: 1.7142857143em;
           color: white;
           font-weight: 700; }
-        .forecast .forecast-content small {
+        .forecast .forecast .forecast-content small {
           font-size: 16px;
           font-size: 1.1428571429em; }
 
