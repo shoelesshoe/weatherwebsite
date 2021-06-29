@@ -3,7 +3,7 @@ body {
 }
 
 .navbar {
-    background-color: darkslategray;
+    background-color: #4b6466;
     padding: 10px;
     text-align: center;
     font-size: large;
@@ -111,14 +111,14 @@ body {
 }
 
 footer {
-    background-color: darkslategrey;
+    background-color: #4b6466;
     padding-bottom: 1rem;
 }
 
 .footer-content {
     width: 45%;
     height: 50%;
-    background-color: darkslategrey;
+    background-color: #4b6466;
     display: inline-block;
     margin: 0 auto;
     text-align: center;
