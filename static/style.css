@@ -4,6 +4,7 @@ body {
 
 .navbar {
     background-color: #327da8;
+    padding: 5px
     text-align: center;
     font-size: large;
     font-family: Verdana, Tahoma, sans-serif;
