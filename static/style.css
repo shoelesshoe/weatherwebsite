@@ -84,17 +84,17 @@ body {
         font-weight: 400; }
       .forecast .forecast .forecast-icon {
         height: 50px; }
-      .forecast .forecast .forecast-content {
+      .forecast .forecast-content {
         padding: 50px 20px 10px;
         text-align: center; }
-        .forecast .forecast .forecast-content .forecast-icon {
+        .forecast .forecast-content .forecast-icon {
           margin-bottom: 20px; }
-        .forecast .forecast .forecast-content .degree {
+        .forecast .forecast-content .degree {
           font-size: 24px;
           font-size: 1.7142857143em;
           color: white;
           font-weight: 700; }
-        .forecast .forecast .forecast-content small {
+        .forecast .forecast-content small {
           font-size: 16px;
           font-size: 1.1428571429em; }
 
