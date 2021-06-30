@@ -40,7 +40,7 @@ body {
           width: 16.6667%;
           float: left; } }
       .forecast .forecast.today {
-        width: 420px; }
+        width: 360px; }
         .forecast .forecast.today .forecast-header {
           *zoom: 1; }
           .forecast .forecast.today .forecast-header:after {
