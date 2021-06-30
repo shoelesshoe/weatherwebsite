@@ -40,7 +40,7 @@ body {
           width: 16.6667%;
           float: left; } }
       .forecast .forecast.today {
-        width: 370px; }
+        width: 380px; }
         .forecast .forecast.today .forecast-header {
           *zoom: 1; }
           .forecast .forecast.today .forecast-header:after {
@@ -58,7 +58,7 @@ body {
           padding-top: 40px;
           padding-bottom: 40px; }
             .today-forecast-icon {
-                text-align: right; }
+                text-align: center; }
         .forecast .forecast.today .location {
           font-size: 18px;
           font-size: 1.2857142857em;
