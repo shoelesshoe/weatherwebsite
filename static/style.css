@@ -54,7 +54,7 @@ body {
           .forecast .forecast.today .forecast-header .date {
             float: right; }
         .forecast .forecast.today .forecast-content {
-          text-align: left;
+          text-align: center;
           padding-top: 40px;
           padding-bottom: 40px; }
             .today-forecast-icon {
