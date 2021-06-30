@@ -4,7 +4,7 @@ body {
 
 .navbar {
     background-color: #265f80;
-    padding: 5px;
+    padding: 4px;
     text-align: center;
     font-size: large;
     font-family: Verdana, Tahoma, sans-serif;
@@ -104,7 +104,7 @@ footer {
     background-color: #265f80;
     padding-bottom: 5px;
     .footer-content {
-        text-align: center; }
+        vertical-align: center; }
 }
 
 .footer-content {
