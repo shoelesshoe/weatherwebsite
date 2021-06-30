@@ -109,6 +109,7 @@ footer {
 .footer-content {
     width: 45%;
     height: 50%;
+    background-color: #ffff;
     display: inline-block;
     margin: 0 auto;
     margin-top: 5px;
