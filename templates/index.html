@@ -17,7 +17,7 @@
     </header>
     <main>
         <section class="forecast">
-            <article class="today-forecast">
+            <article class="today forecast">
                 <div class="forecast-header">
                     <div class="day">{{ today_day }}</div>
                     <div class="date">{{ today_month_date }}</div>
@@ -28,7 +28,7 @@
                         <div class="high-temp">{{ today_high_temp }}<sup>o</sup>C</div>
                         <div class="low-temp">{{ today_low_temp }}<sup>o</sup>C</div>
                         <div class="forecast-icon">
-                            <span><img src="{{ today_forecast_img }}" alt="Forecast" width=90px></span>
+                            <img id="today-cloud" src="{{ today_forecast_img }}" alt="Forecast" width=90px>
                         </div>	
                     </div>
                     <img src="../static/img/humidity.png" alt="Humidity" width=30px>{{ humidity }}%
