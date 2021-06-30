@@ -55,7 +55,7 @@ body {
             float: right; }
         .forecast .forecast.today .forecast-content {
           text-align: center;
-          padding-top: 30px;
+          padding-top: 50px;
           padding-bottom: 40px; }
         .forecast .forecast.today .location {
           font-size: 18px;
