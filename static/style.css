@@ -103,8 +103,7 @@ body {
 footer {
     background-color: #265f80;
     padding-bottom: 5px;
-    .footer-content {
-        vertical-align: center; }
+    vertical-align: center;
 }
 
 .footer-content {
